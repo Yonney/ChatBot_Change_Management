@@ -1,0 +1,40 @@
+openapi: 3.0.3
+info:
+  title: Change Management FAQ Chatbot API
+  description: |
+    API specification for the Change Management FAQ Chatbot.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /:
+    get:
+      summary: Serve Chatbot UI
+      responses:
+        '200':
+          description: Chatbot UI HTML
+          content:
+            text/html:
+              schema:
+                type: string
+  /kb:
+    get:
+      summary: Get FAQ Knowledge Base
+      responses:
+        '200':
+          description: List of FAQ entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    q:
+                      type: string
+                    a:
+                      type: string
+                    patterns:
+                      type: array
+                      items:
+                        type: string
