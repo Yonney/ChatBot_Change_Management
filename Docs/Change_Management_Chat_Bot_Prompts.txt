@@ -1,0 +1,95 @@
+Below are the prompts I derived based on the TRICE framework we were taught in class.
+
+T — Task
+Create a fully working FAQ chatbot application for Technology Change Management in our IT department. The chatbot must run locally using Node.js, load knowledge from a knowledgebase.pdf file, extract Q/A pairs, perform keyword-based matching, and serve a simple interactive web chat frontend. The output should be a single full application containing both backend and frontend code.
+
+R — Role
+Act as a senior full‑stack JavaScript engineer specializing in:
+
+Node.js backend development
+PDF text extraction
+Lightweight search/matching algorithms
+HTML/CSS/JS UI development
+Building small self-contained apps without frameworks
+Designing clean, readable and well-commented code
+
+You should also understand Technology Change Management concepts such as RFCs, CAB, approvals, lead times, freeze periods, communication plans, and training rollout.
+
+I — Input
+Use these inputs to guide development:
+
+The knowledge base will come from a PDF file named knowledgebase.pdf stored in the same project folder.
+The PDF may contain structured Q/A or unstructured paragraphs, so the parser must support both.
+Chatbot answers must be derived only from the PDF content.
+The UI should be a single-page HTML interface served by the Node.js backend.
+Questions typed by the user should be matched to relevant answers using fuzzy keyword scoring.
+
+
+C — Constraints
+You must produce code that meets the following rules:
+Backend requirements
+
+Use Node.js only, no external frameworks like Express.
+Use native http, fs, and path modules.
+Use the pdf-extraction npm package to extract text.
+Create a function to parse structured Q: / A: pairs.
+If no structured pairs exist, fall back to splitting the PDF text into paragraph chunks.
+Build fuzzy matching using:
+
+Stopwords filtering
+Keyword pattern extraction
+Normalization
+Basic scoring (ratio of matched keywords)
+
+
+Return JSON when the UI calls /kb.
+
+Frontend requirements
+
+Must be embedded as a single multi-line HTML string in the backend script.
+Must include:
+
+A header
+Chat bubbles for user and bot
+Typing animation
+Africa-inspired dark theme (black/green/red/yellow)
+Input box + send button
+
+
+The browser should handle all chat logic (no server-side answering).
+
+Application structure
+
+Entire app lives in one Node.js file.
+Chatbot logic on the client must do all matching locally.
+Server should auto-reload KB when the PDF changes.
+Code must be clean, modular, and heavily commented.
+
+Behavior
+
+If no match is found (score < 0.35), reply:
+“I couldn't confidently match that. Please rephrase.”
+Provide match confidence in parentheses.
+
+
+E — Expectations
+Your final answer must:
+
+Return a single JavaScript file containing the entire chatbot system (backend + frontend).
+Include comments explaining every significant function and design choice.
+Produce code that can run immediately after installing dependencies.
+Use strong code organization and readable structure.
+Ensure the UI theme and behavior matches an Africa‑themed professional IT chatbot.
+Produce results extremely close to production-ready code.
+
+
+Final prompt used in Microsoft Copilot and Chat GPT.
+
+Create a fully working Node.js-based Technology Change Management FAQ chatbot that loads answers from knowledgebase.pdf,
+ extracts structured or unstructured Q/A using pdf-extraction, builds stopword‑filtered keyword patterns,
+ performs fuzzy matching to answer user questions, auto-reloads when the PDF changes, 
+ and serves a complete Africa‑themed HTML/CSS/JS chat UI from a single file using only the native http, fs, and path modules—producing
+ clean, readable, fully commented production-quality code in one file.”
+
+
+

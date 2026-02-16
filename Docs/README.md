@@ -6,7 +6,7 @@ A browser-based chatbot that answers Change Management questions using data extr
 - Loads FAQs dynamically from a PDF
 - Pattern-based question matching
 - Stopwords filtering for better accuracy
-- Africa-themed chat UI
+- MPESA Africa chat UI
 - Zero external backend dependencies
 
 ## Setup
